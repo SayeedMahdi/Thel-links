@@ -9,45 +9,20 @@
 		<link rel="stylesheet" href="./index.style.css" />
 	</head>
 	<body>
-		<!-- <script>
-			clock = () => {
-				let today = new Date()
-				let h = (today.getHours() % 12) + today.getMinutes() / 59 // 22 % 12 = 10pm
-				let m = today.getMinutes() // 0 - 59
-				let s = today.getSeconds() // 0 - 59
-
-				h *= 30 // 12 * 30 = 360deg
-				m *= 6
-				s *= 6 // 60 * 6 = 360deg
-
-				rotation(hours, h)
-				rotation(minutes, m)
-				rotation(seconds, s)
-
-				// call every second
-				setTimeout(clock, 500)
-			}
-
-			window.onload = clock()
-		</script> -->
-
-		<!-- <div class="clock-container">
-			<div class="clock">
-				<div class="hand hours"></div>
-				<div class="hand minutes"></div>
-				<div class="hand seconds"></div>
-				<div class="point"></div>
-				<div class="marker">
-					<span class="marker__1"></span>
-					<span class="marker__2"></span>
-					<span class="marker__3"></span>
-					<span class="marker__4"></span>
-				</div>
+		<h1 class="header">Welcome to Rahanet System links panel</h1>
+		<div class="clock">
+			<div class="hand hours"></div>
+			<div class="hand minutes"></div>
+			<div class="hand seconds"></div>
+			<div class="point"></div>
+			<div class="marker">
+				<span class="marker__1"></span>
+				<span class="marker__2"></span>
+				<span class="marker__3"></span>
+				<span class="marker__4"></span>
 			</div>
-		</div> -->
-
+		</div>
 		<div class="container">
-			<h1 class="header">Welcome to Rahanet System links panel</h1>
 			<div class="house" id="h">
 				<div class="shadows">
 					<div class="shadow-a"></div>
@@ -408,31 +383,33 @@
 		</div>
 
 		<script>
-			/*
-		Designed by: Joanna Ngai
-		Original image: https://dribbble.com/shots/14118297-Villa
-*/
-
-			const h = document.querySelector("#h")
-			const log = document.querySelector("#logo")
 			const hours = document.querySelector(".hours")
 			const minutes = document.querySelector(".minutes")
 			const seconds = document.querySelector(".seconds")
 
-			const b = document.body
+			clock = () => {
+				let today = new Date()
+				let h = (today.getHours() % 12) + today.getMinutes() / 59 // 22 % 12 = 10pm
+				let m = today.getMinutes() // 0 - 59
+				let s = today.getSeconds() // 0 - 59
 
-			let base = (e) => {
-				var x = e.pageX / window.innerWidth - 0.5
-				var y = e.pageY / window.innerHeight - 0.5
-				h.style.transform = `
-        perspective(20000px)
-        rotateX(${y * 10 + 75}deg)
-        rotateZ(${-x * 10 + 35}deg)
-        translateZ(-9vw)
-    `
+				h *= 30 // 12 * 30 = 360deg
+				m *= 6
+				s *= 6 // 60 * 6 = 360deg
+
+				rotation(hours, h)
+				rotation(minutes, m)
+				rotation(seconds, s)
+
+				// call every second
+				setTimeout(clock, 500)
 			}
 
-			b.addEventListener("pointermove", base)
+			rotation = (target, val) => {
+				target.style.transform = `rotate(${val}deg)`
+			}
+
+			window.onload = clock()
 		</script>
 	</body>
 </html>
