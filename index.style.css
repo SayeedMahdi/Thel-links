@@ -37,44 +37,8 @@
 	margin-bottom: 3rem;
 	flex-wrap: wrap;
 }
-@media screen and (max-width: 1300px) {
-	.links {
-	}
-	.header {
-		font-size: 2rem;
-	}
-}
 
-@media only screen and (max-width: 700px) {
-	.links .btn {
-		height: 2rem !important;
-		width: 4rem !important;
-		font-size: 12px;
-	}
-	.header {
-		font-size: 2rem !important;
-		text-align: center;
-	}
-}
 
-.links a {
-	color: inherit;
-	text-decoration: none;
-	font-family: "Poppins", sans-serif;
-}
-
-.links .btn {
-	height: 4rem;
-	width: 6rem;
-	border-radius: 1rem;
-	box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
-		-0.2rem -0.2rem 0.5rem var(--white);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	transition: 0.3s ease;
-}
 .btn__primary {
 	background: var(--primary);
 	box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light),
@@ -92,17 +56,17 @@
 		inset -0.2rem -0.2rem 1rem var(--primary-light);
 }
 .header {
+	direction: rtl;
 	z-index: 10;
 	color: black;
 	position: absolute;
-	top: 1rem;
-	font-size: 3rem;
+	bottom: 5%;
+	left: 20%;
+	right: 20%;
 	color: #2abdb0;
 	background-color: #fff;
 	padding: 1rem;
 	border-radius: 20px;
-	left: 50%;
-	transform: translate(-50%, 0);
 }
 
 /*  CLOCK  */

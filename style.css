@@ -17,11 +17,7 @@
 	--greyLight-3: #bec8e4;
 	--greyDark: #9baacf;
 }
-body {
-	display: flex;
-	background-color: #ddd;
-	align-items: center;
-}
+
 
 *,
 *::after,
@@ -36,9 +32,6 @@ body {
 
 /* Generic */
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
@@ -53,6 +46,9 @@ body {
 /***************/
 .house {
 	position: absolute;
+	top: 30%;
+	left: 40%;
+	margin: 0 auto;
 	width: 36vw;
 	height: 24vw;
 	transform: perspective(20000px) rotateX(75deg) rotateZ(35deg) translateZ(-9vw);
